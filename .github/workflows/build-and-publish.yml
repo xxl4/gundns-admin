@@ -41,7 +41,7 @@ jobs:
         run: |
           docker login --username=${{ secrets.DOCKER_USERNAME }} registry.ap-southeast-1.aliyuncs.com --password=${{ secrets.DOCKER_PASSWORD }}
           echo "************ docker login end"
-          docker build -t gundns-admin:latest -f ./docker/Dockerfile
+          docker build -t gundns-admin:latest -f ./docker/Dockerfile .
           echo "************ docker build end"
           echo "************ docker images ps start"
           docker images ps
