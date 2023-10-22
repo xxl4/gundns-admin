@@ -25,10 +25,10 @@ on:
       - LICENSE
       - README.md
       - SECURITY.md
-  env:
-    IMAGE_NAME: registry.ap-southeast-1.aliyuncs.com/kuops/gundns-admin # 镜像名称
-    TAG: ${{ github.sha }}
-    IMAGE_NAME_TAG: registry.ap-southeast-1.aliyuncs.com/kuops/gundns-admin:${{ github.sha }}
+env:
+  IMAGE_NAME: registry.ap-southeast-1.aliyuncs.com/kuops/gundns-admin # 镜像名称
+  TAG: ${{ github.sha }}
+  IMAGE_NAME_TAG: registry.ap-southeast-1.aliyuncs.com/kuops/gundns-admin:${{ github.sha }}
 
 jobs:
   build-and-push-docker-image:
