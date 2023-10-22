@@ -43,6 +43,9 @@ jobs:
           echo "************ docker login end"
           docker build -f ./docker/Dockerfile .
           echo "************ docker build end"
+          echo "************ docker images ps start"
+          docker images ps
+          echo "************ docker images ps end"
           docker tag gundns-admin ${{ env.IMAGE_NAME_TAG }}
           echo "************ docker tag end"
           docker images
