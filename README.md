@@ -3,7 +3,7 @@
 A GunDNS web interface with advanced features.
 
 [![CodeQL](https://github.com/nicelizhi/gundns-admin/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/nicelizhi/gundns-admin/actions/workflows/codeql-analysis.yml)
-[![Docker Image](https://github.com/GunDNS-Admin/gundns-admin/actions/workflows/build-and-publish.yml/badge.svg?branch=master)](https://github.com/nicelizhi/gundns-admin/actions/workflows/build-and-publish.yml)
+[![Docker Image](https://github.com/nicelizhi/gundns-admin/actions/workflows/build-and-publish.yml/badge.svg?branch=master)](https://github.com/nicelizhi/gundns-admin/actions/workflows/build-and-publish.yml)
 
 #### Features:
 
