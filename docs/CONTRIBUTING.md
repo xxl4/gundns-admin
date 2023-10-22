@@ -2,7 +2,7 @@
 
 **Looking for help?** Try taking a look at the project's
 [Support Guide](https://github.com/PowerDNS-Admin/PowerDNS-Admin/blob/master/.github/SUPPORT.md) or joining
-our [Discord Server](https://discord.gundnsadmin.org).
+our [Discord Server](https://github.com/nicelizhi/gundns-admin/discussions).
 
 <div align="center">
   <h3>
