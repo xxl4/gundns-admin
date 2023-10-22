@@ -38,7 +38,7 @@ pip3 install -r requirements.txt
 
 ## Configuring PowerDNS-Admin
 
-NOTE: The default config file is located at `./powerdnsadmin/default_config.py`. If you want to load another one, please set the `FLASK_CONF` environment variable. E.g.
+NOTE: The default config file is located at `./gundnsadmin/default_config.py`. If you want to load another one, please set the `FLASK_CONF` environment variable. E.g.
 ```bash
 cp configs/development.py /opt/powerdns-admin/production.py
 export FLASK_CONF=/opt/powerdns-admin/production.py
@@ -74,7 +74,7 @@ Be sure to uncomment one of the lines like `SQLALCHEMY_DATABASE_URI`.
 ### Initialise the database
 
 ```bash
-export FLASK_APP=powerdnsadmin/__init__.py
+export FLASK_APP=gundnsadmin/__init__.py
 flask db upgrade
 ```
 

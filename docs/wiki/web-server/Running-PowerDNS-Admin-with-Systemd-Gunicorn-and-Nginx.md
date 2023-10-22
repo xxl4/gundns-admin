@@ -25,7 +25,7 @@ Group=pdns
 WorkingDirectory=/opt/web/powerdns-admin
 ExecStartPre=+mkdir -p /run/powerdns-admin/
 ExecStartPre=+chown pdns:pdns -R /run/powerdns-admin/
-ExecStart=/usr/local/bin/gunicorn --pid /run/powerdns-admin/pid --bind unix:/run/powerdns-admin/socket 'powerdnsadmin:create_app()'
+ExecStart=/usr/local/bin/gunicorn --pid /run/powerdns-admin/pid --bind unix:/run/powerdns-admin/socket 'gundnsadmin:create_app()'
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s TERM $MAINPID
 PrivateTmp=true
@@ -88,7 +88,7 @@ server {
 
   location ~ ^/static/  {
     include  /etc/nginx/mime.types;
-    root /opt/web/powerdns-admin/powerdnsadmin;
+    root /opt/web/powerdns-admin/gundnsadmin;
 
     location ~*  \.(jpg|jpeg|png|gif)$ {
       expires 365d;
@@ -126,7 +126,7 @@ server {
         listen                  443 ssl http2 default_server;
         server_name             _;
         index                   index.html index.htm;
-        error_log               /var/log/nginx/error_powerdnsadmin.log error;
+        error_log               /var/log/nginx/error_gundnsadmin.log error;
         access_log              off;
 
         ssl_certificate                 path_to_your_fullchain_or_cert;
@@ -153,7 +153,7 @@ server {
 
         location ~ ^/static/  {
                 include         mime.types;
-                root            /opt/web/powerdns-admin/powerdnsadmin;
+                root            /opt/web/powerdns-admin/gundnsadmin;
                 location        ~* \.(jpg|jpeg|png|gif)$ { expires 365d; }
                 location        ~* ^.+.(css|js)$ { expires 7d; }
         }

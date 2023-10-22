@@ -16,8 +16,8 @@ The following directions assume a default configuration and for productions setu
 
 Connect to the database (Usually using `mysql -u root -p` if a password has been set on the root database user or `sudo mysql` if not), then enter the following:
 ```
-CREATE DATABASE `powerdnsadmin` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-GRANT ALL PRIVILEGES ON `powerdnsadmin`.* TO 'pdnsadminuser'@'localhost' IDENTIFIED BY 'YOUR_PASSWORD_HERE';
+CREATE DATABASE `gundnsadmin` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+GRANT ALL PRIVILEGES ON `gundnsadmin`.* TO 'pdnsadminuser'@'localhost' IDENTIFIED BY 'YOUR_PASSWORD_HERE';
 FLUSH PRIVILEGES;
 ```
 - If your database server is located on a different machine then change 'localhost' to '%'
@@ -51,6 +51,6 @@ Solution: Convert the column to MEDIUMTEXT:
 1. Connect to the database shell as described in the setup database section:
 2. Execute the following commands:
     ```
-    USE powerdnsadmin;
+    USE gundnsadmin;
     ALTER TABLE history MODIFY detail MEDIUMTEXT;
     ```

@@ -52,14 +52,14 @@ pip install -r requirements.txt
 
 ## Running PowerDNS-Admin
 
-NOTE: The default config file is located at `./powerdnsadmin/default_config.py`. If you want to load another one, please set the `FLASK_CONF` environment variable. E.g.
+NOTE: The default config file is located at `./gundnsadmin/default_config.py`. If you want to load another one, please set the `FLASK_CONF` environment variable. E.g.
 ```bash
 export FLASK_CONF=../configs/development.py
 ```
 
 **Then create the database schema by running:**
 ```
-(flask) [khanh@localhost powerdns-admin] export FLASK_APP=powerdnsadmin/__init__.py
+(flask) [khanh@localhost powerdns-admin] export FLASK_APP=gundnsadmin/__init__.py
 (flask) [khanh@localhost powerdns-admin] flask db upgrade
 ```
 

@@ -134,7 +134,7 @@ class SAML(object):
         if 'SAML_SP_REQUESTED_ATTRIBUTES' in current_app.config:
              saml_req_attr = json.loads(current_app.config['SAML_SP_REQUESTED_ATTRIBUTES'])
              settings['sp']['attributeConsumingService'] = {
-                "serviceName": "PowerDNSAdmin",
+                "serviceName": "gundnsadmin",
                 "serviceDescription": "PowerDNS-Admin - PowerDNS administration utility",
                 "requestedAttributes": saml_req_attr
              }

@@ -10,14 +10,14 @@ We assume the database is installed per your platform's directions (apt, yum, et
 We assume a default configuration and only the postgres user existing.
 
 ## Setup database
-The below will create a database called powerdnsadmindb and a user of powerdnsadmin.
+The below will create a database called gundnsadmindb and a user of gundnsadmin.
 
 ```
 $ sudo su - postgres
-$ createuser powerdnsadmin
-$ createdb -E UTF8 -l en_US.UTF-8 -O powerdnsadmin -T template0 powerdnsadmindb 'The database for PowerDNS-Admin'
+$ createuser gundnsadmin
+$ createdb -E UTF8 -l en_US.UTF-8 -O gundnsadmin -T template0 gundnsadmindb 'The database for PowerDNS-Admin'
 $ psql
-postgres=# ALTER ROLE powerdnsadmin WITH PASSWORD 'powerdnsadmin_password';
+postgres=# ALTER ROLE gundnsadmin WITH PASSWORD 'gundnsadmin_password';
 ```
 
 Note:

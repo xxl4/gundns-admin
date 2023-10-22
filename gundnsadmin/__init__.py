@@ -34,10 +34,10 @@ def create_app(config=None):
 
     # Load config from env variables if using docker
     if os.path.exists(os.path.join(app.root_path, 'docker_config.py')):
-        app.config.from_object('powerdnsadmin.docker_config')
+        app.config.from_object('gundnsadmin.docker_config')
     else:
         # Load default configuration
-        app.config.from_object('powerdnsadmin.default_config')
+        app.config.from_object('gundnsadmin.default_config')
 
     # Load config file from FLASK_CONF env variable
     if 'FLASK_CONF' in os.environ:

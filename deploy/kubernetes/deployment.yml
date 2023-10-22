@@ -1,29 +1,29 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: powerdnsadmin
+  name: gundnsadmin
   labels:
-    app: powerdnsadmin
+    app: gundnsadmin
 spec:
   strategy:
     type: RollingUpdate
   replicas: 1
   selector:
     matchLabels:
-      app: powerdnsadmin
+      app: gundnsadmin
   template:
     metadata:
       labels:
-        app: powerdnsadmin
+        app: gundnsadmin
     spec:
       containers:
-        - name: powerdnsadmin
-          image: powerdnsadmin/pda-legacy
+        - name: gundnsadmin
+          image: gundnsadmin/pda-legacy
           ports:
             - containerPort: 80
               protocol: TCP
           envFrom:
             - configMapRef:
-                name: powerdnsadmin-env
+                name: gundnsadmin-env
           imagePullPolicy: Always
       restartPolicy: Always

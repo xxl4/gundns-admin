@@ -9,11 +9,11 @@ You shouldn't run PowerDNS-Admin as _root_, so let's start of with the user/grou
 
 Create a new group for PowerDNS-Admin:
 
-> sudo groupadd powerdnsadmin
+> sudo groupadd gundnsadmin
 
 Create a user for PowerDNS-Admin:
 
-> sudo useradd --system -g powerdnsadmin powerdnsadmin
+> sudo useradd --system -g gundnsadmin gundnsadmin
 
 _`--system` creates a user without login-shell and password, suitable for running system services._
 
@@ -29,8 +29,8 @@ After=network.target
 
 [Service]
 Type=simple
-User=powerdnsadmin
-Group=powerdnsadmin
+User=gundnsadmin
+Group=gundnsadmin
 ExecStart=/opt/web/powerdns-admin/flask/bin/python ./run.py
 WorkingDirectory=/opt/web/powerdns-admin
 Restart=always
@@ -47,8 +47,8 @@ After=network.target
 
 [Service]
 Type=simple
-User=powerdnsadmin
-Group=powerdnsadmin
+User=gundnsadmin
+Group=gundnsadmin
 Environment=PATH=/opt/web/powerdns-admin/flask/bin
 ExecStart=/opt/web/powerdns-admin/flask/bin/python /opt/web/powerdns-admin/run.py
 WorkingDirectory=/opt/web/powerdns-admin
@@ -58,7 +58,7 @@ Restart=always
 WantedBy=multi-user.target
 ```
 Before starting the service, we need to make sure that the new user can work on the files in the PowerDNS-Admin folder:
-> chown -R powerdnsadmin:powerdnsadmin /opt/web/powerdns-admin
+> chown -R gundnsadmin:gundnsadmin /opt/web/powerdns-admin
 
 After saving the file, we need to reload the systemd daemon:
 > sudo systemctl daemon-reload

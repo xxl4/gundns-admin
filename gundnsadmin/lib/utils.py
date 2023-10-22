@@ -33,7 +33,7 @@ def fetch_remote(remote_url,
     verify = bool(verify)  # enforce type boolean
 
     our_headers = {
-        'user-agent': 'powerdnsadmin/0',
+        'user-agent': 'gundnsadmin/0',
         'pragma': 'no-cache',
         'cache-control': 'no-cache'
     }

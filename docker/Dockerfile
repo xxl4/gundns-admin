@@ -15,7 +15,7 @@ ARG BUILD_DEPENDENCIES="build-base \
 ENV LC_ALL=en_US.UTF-8 \
     LANG=en_US.UTF-8 \
     LANGUAGE=en_US.UTF-8 \
-    FLASK_APP=/build/powerdnsadmin/__init__.py
+    FLASK_APP=/build/gundnsadmin/__init__.py
 
 # Get dependencies
 # py3-pip should not belong to BUILD_DEPENDENCIES. Otherwise, when we remove
@@ -39,17 +39,17 @@ COPY . /build
 # Prepare assets
 RUN yarn install --pure-lockfile --production && \
     yarn cache clean && \
-    sed -i -r -e "s|'rcssmin',\s?'cssrewrite'|'rcssmin'|g" /build/powerdnsadmin/assets.py && \
+    sed -i -r -e "s|'rcssmin',\s?'cssrewrite'|'rcssmin'|g" /build/gundnsadmin/assets.py && \
     flask assets build
 
-RUN mv /build/powerdnsadmin/static /tmp/static && \
-    mkdir /build/powerdnsadmin/static && \
-    cp -r /tmp/static/generated /build/powerdnsadmin/static && \
-    cp -r /tmp/static/assets /build/powerdnsadmin/static && \
-    cp -r /tmp/static/img /build/powerdnsadmin/static && \
-    find /tmp/static/node_modules -name 'webfonts' -exec cp -r {} /build/powerdnsadmin/static \; && \
-    find /tmp/static/node_modules -name 'fonts' -exec cp -r {} /build/powerdnsadmin/static \; && \
-    find /tmp/static/node_modules/icheck/skins/square -name '*.png' -exec cp {} /build/powerdnsadmin/static/generated \;
+RUN mv /build/gundnsadmin/static /tmp/static && \
+    mkdir /build/gundnsadmin/static && \
+    cp -r /tmp/static/generated /build/gundnsadmin/static && \
+    cp -r /tmp/static/assets /build/gundnsadmin/static && \
+    cp -r /tmp/static/img /build/gundnsadmin/static && \
+    find /tmp/static/node_modules -name 'webfonts' -exec cp -r {} /build/gundnsadmin/static \; && \
+    find /tmp/static/node_modules -name 'fonts' -exec cp -r {} /build/gundnsadmin/static \; && \
+    find /tmp/static/node_modules/icheck/skins/square -name '*.png' -exec cp {} /build/gundnsadmin/static/generated \;
 
 RUN { \
       echo "from flask_assets import Environment"; \
@@ -59,18 +59,18 @@ RUN { \
       echo "assets.register('css_login', 'generated/login.css')"; \
       echo "assets.register('js_main', 'generated/main.js')"; \
       echo "assets.register('css_main', 'generated/main.css')"; \
-    } > /build/powerdnsadmin/assets.py
+    } > /build/gundnsadmin/assets.py
 
 # Move application
 RUN mkdir -p /app && \
-    cp -r /build/migrations/ /build/powerdnsadmin/ /build/run.py /app && \
+    cp -r /build/migrations/ /build/gundnsadmin/ /build/run.py /app && \
     mkdir -p /app/configs && \
     cp -r /build/configs/docker_config.py /app/configs
 
 # Build image
 FROM alpine:3.17
 
-ENV FLASK_APP=/app/powerdnsadmin/__init__.py \
+ENV FLASK_APP=/app/gundnsadmin/__init__.py \
     USER=pda
 
 RUN apk add --no-cache mariadb-connector-c postgresql-client py3-gunicorn py3-pyldap py3-flask py3-psycopg2 xmlsec tzdata libcap && \
@@ -88,10 +88,10 @@ COPY ./docker/entrypoint.sh /usr/bin/
 
 WORKDIR /app
 RUN chown ${USER}:${USER} ./configs /app && \
-    cat ./powerdnsadmin/default_config.py ./configs/docker_config.py > ./powerdnsadmin/docker_config.py
+    cat ./gundnsadmin/default_config.py ./configs/docker_config.py > ./gundnsadmin/docker_config.py
 
 EXPOSE 80/tcp
 USER ${USER}
 HEALTHCHECK CMD ["wget","--output-document=-","--quiet","--tries=1","http://127.0.0.1/"]
 ENTRYPOINT ["entrypoint.sh"]
-CMD ["gunicorn","powerdnsadmin:create_app()"]
+CMD ["gunicorn","gundnsadmin:create_app()"]

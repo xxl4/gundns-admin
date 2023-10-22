@@ -2,7 +2,7 @@
 
 **Looking for help?** Try taking a look at the project's
 [Support Guide](https://github.com/PowerDNS-Admin/PowerDNS-Admin/blob/master/.github/SUPPORT.md) or joining
-our [Discord Server](https://discord.powerdnsadmin.org).
+our [Discord Server](https://discord.gundnsadmin.org).
 
 <div align="center">
   <h3>
@@ -95,7 +95,7 @@ We do maintain an active Mattermost instance for internal communication, but we 
 
 Some maintainers petition their employer to grant some of their paid time to work on PDA.
 
-Interested? You can contact our lead maintainer, Matt Scott, at admin@powerdnsadmin.org. We'd love to have you on the team!
+Interested? You can contact our lead maintainer, Matt Scott, at admin@gundnsadmin.org. We'd love to have you on the team!
 
 ## :heart: Other Ways to Contribute
 

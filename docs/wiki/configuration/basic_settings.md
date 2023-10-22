@@ -1,6 +1,6 @@
-### PowerDNSAdmin basic settings
+### gundnsadmin basic settings
 
-PowerDNSAdmin has many features and settings available to be turned either off or on.
+gundnsadmin has many features and settings available to be turned either off or on.
 In this docs those settings will be explain.
 To find the settings in the the dashboard go to settings>basic.
 

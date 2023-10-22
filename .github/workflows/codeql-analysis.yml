@@ -28,10 +28,10 @@ on:
       - docker/**
       - docker-test/**
       - docs/**
-      - powerdnsadmin/static/assets/**
-      - powerdnsadmin/static/custom/css/**
-      - powerdnsadmin/static/img/**
-      - powerdnsadmin/swagger-spec.yaml
+      - gundnsadmin/static/assets/**
+      - gundnsadmin/static/custom/css/**
+      - gundnsadmin/static/img/**
+      - gundnsadmin/swagger-spec.yaml
       - .dockerignore
       - .gitattributes
       - .gitignore
@@ -61,10 +61,10 @@ on:
       - docker/**
       - docker-test/**
       - docs/**
-      - powerdnsadmin/static/assets/**
-      - powerdnsadmin/static/custom/css/**
-      - powerdnsadmin/static/img/**
-      - powerdnsadmin/swagger-spec.yaml
+      - gundnsadmin/static/assets/**
+      - gundnsadmin/static/custom/css/**
+      - gundnsadmin/static/img/**
+      - gundnsadmin/swagger-spec.yaml
       - .dockerignore
       - .gitattributes
       - .gitignore

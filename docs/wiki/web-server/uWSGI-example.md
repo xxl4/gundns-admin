@@ -25,7 +25,7 @@ This guide will show you how to run PowerDNS-Admin via uWSGI and nginx. This gui
  pythonpath = /opt/pdns-admin/PowerDNS-Admin/
  virtualenv = /opt/pdns-admin/PowerDNS-Admin/flask 
  
- mount = /pdns=powerdnsadmin:create_app()
+ mount = /pdns=gundnsadmin:create_app()
  manage-script-name = true
  
  vacuum = true

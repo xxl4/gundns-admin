@@ -43,7 +43,7 @@ RUN pip3 install -r requirements.txt
 
 COPY . /app
 
-ENV FLASK_APP=powerdnsadmin/__init__.py
+ENV FLASK_APP=gundnsadmin/__init__.py
 RUN yarn install --pure-lockfile --production \
     && yarn cache clean \
     && flask assets build

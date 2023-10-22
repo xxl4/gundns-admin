@@ -13,9 +13,9 @@
 import sys
 import logging
 
-from powerdnsadmin import create_app
-from powerdnsadmin.models.domain import Domain
-from powerdnsadmin.models.setting import Setting
+from gundnsadmin import create_app
+from gundnsadmin.models.domain import Domain
+from gundnsadmin.models.setting import Setting
 
 app = create_app()
 app.logger.setLevel(logging.INFO)

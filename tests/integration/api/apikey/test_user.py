@@ -1,8 +1,8 @@
 import json
 from collections import namedtuple
 
-from powerdnsadmin.lib.validators import validate_zone
-from powerdnsadmin.lib.schema import DomainSchema
+from gundnsadmin.lib.validators import validate_zone
+from gundnsadmin.lib.schema import DomainSchema
 
 
 class TestIntegrationApiApiKeyUser(object):

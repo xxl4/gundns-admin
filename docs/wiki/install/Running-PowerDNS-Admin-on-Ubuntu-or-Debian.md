@@ -67,7 +67,7 @@ export FLASK_CONF=../configs/production.py
 Do the DB migration
 
 ```bash
-export FLASK_APP=powerdnsadmin/__init__.py
+export FLASK_APP=gundnsadmin/__init__.py
 flask db upgrade
 ```
 

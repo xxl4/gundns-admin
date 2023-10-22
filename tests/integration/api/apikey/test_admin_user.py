@@ -2,8 +2,8 @@ import pytest
 import json
 from collections import namedtuple
 
-from powerdnsadmin.lib.validators import validate_apikey
-from powerdnsadmin.lib.schema import ApiKeySchema
+from gundnsadmin.lib.validators import validate_apikey
+from gundnsadmin.lib.schema import ApiKeySchema
 from tests.conftest import user_apikey_data, admin_apikey_data
 
 

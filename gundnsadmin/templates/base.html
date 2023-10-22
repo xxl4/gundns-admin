@@ -243,7 +243,7 @@
             <script>
                 // close the session warning popup when receive
                 // a boradcast message
-                var bc = new BroadcastChannel('powerdnsadmin');
+                var bc = new BroadcastChannel('gundnsadmin');
                 bc.addEventListener('message', function (e) {
                     if (e.data == 'close_session_timeout_modal') {
                         $("#modal_session_warning").modal('hide');
@@ -299,7 +299,7 @@
                         onClickExtend: function () {
                             // broadcast a message to tell other tabes
                             // close the session warning popup
-                            var bc = new BroadcastChannel('powerdnsadmin');
+                            var bc = new BroadcastChannel('gundnsadmin');
                             bc.postMessage('close_session_timeout_modal');
                         },
 

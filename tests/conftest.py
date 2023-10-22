@@ -4,11 +4,11 @@ from base64 import b64encode
 import pytest
 from flask_migrate import upgrade as flask_migrate_upgrade
 
-from powerdnsadmin import create_app
-from powerdnsadmin.models.api_key import ApiKey
-from powerdnsadmin.models.base import db
-from powerdnsadmin.models.setting import Setting
-from powerdnsadmin.models.user import User
+from gundnsadmin import create_app
+from gundnsadmin.models.api_key import ApiKey
+from gundnsadmin.models.base import db
+from gundnsadmin.models.setting import Setting
+from gundnsadmin.models.user import User
 
 
 @pytest.fixture(scope="session")

@@ -15,7 +15,7 @@ PDA has its own API, that should not be confused with the PowerDNS API. Keep in 
 
 The PDA API consists of two distinct parts:
 
-- The /powerdnsadmin endpoints manages PDA content (accounts, users, apikeys) and also allow domain creation/deletion
+- The /gundnsadmin endpoints manages PDA content (accounts, users, apikeys) and also allow domain creation/deletion
 - The /server endpoints are proxying queries to the backend PowerDNS instance's API. PDA acts as a proxy managing several API Keys and permissions to the PowerDNS content.
 
 The requests to the API needs two headers:
@@ -23,7 +23,7 @@ The requests to the API needs two headers:
 - The classic 'Content-Type: application/json' is required to all POST and PUT requests, though it's harmless to use it on each call
 - The authentication header to provide either the login:password basic authentication or the Api Key authentication.
 
-When you access the `/powerdnsadmin` endpoint, you must use the Basic Auth:
+When you access the `/gundnsadmin` endpoint, you must use the Basic Auth:
 
 ```bash
 # Encode your user and password to base64
@@ -44,7 +44,7 @@ Finally, the `/sync_domains` endpoint accepts both basic and apikey authenticati
 
 #### Examples
 
-Creating domain via `/powerdnsadmin`:
+Creating domain via `/gundnsadmin`:
 
 ```bash
 curl -L -vvv -H 'Content-Type: application/json' -H 'Authorization: Basic YWRtaW46YWRtaW4=' -X POST http://localhost:9191/api/v1/pdnsadmin/zones --data '{"name": "yourdomain.com.", "kind": "NATIVE", "nameservers": ["ns1.mydomain.com."]}'
@@ -132,5 +132,5 @@ docker-compose up -d
 # Set environment variables
 source .env
 # Generate the diagrams
-eralchemy -i 'mysql://${PDA_DB_USER}:${PDA_DB_PASSWORD}@'$(docker inspect powerdns-admin-mysql|jq -jr '.[0].NetworkSettings.Networks.powerdnsadmin_default.IPAddress')':3306/powerdns_admin' -o /tmp/output.pdf
+eralchemy -i 'mysql://${PDA_DB_USER}:${PDA_DB_PASSWORD}@'$(docker inspect powerdns-admin-mysql|jq -jr '.[0].NetworkSettings.Networks.gundnsadmin_default.IPAddress')':3306/powerdns_admin' -o /tmp/output.pdf
 ```

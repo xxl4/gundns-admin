@@ -53,7 +53,7 @@ Apache vhost configuration;
         DocumentRoot /srv/vhosts/superawesomedns.foo.bar/
 
         WSGIDaemonProcess pdnsadmin user=pdnsadmin group=pdnsadmin threads=5
-        WSGIScriptAlias / /srv/vhosts/superawesomedns.foo.bar/powerdnsadmin.wsgi
+        WSGIScriptAlias / /srv/vhosts/superawesomedns.foo.bar/gundnsadmin.wsgi
 
         # pass BasicAuth on to the WSGI process
         WSGIPassAuthorization On
@@ -79,7 +79,7 @@ WSGIDaemonProcess pdnsadmin socket-user=apache user=pdnsadmin group=pdnsadmin th
 WSGISocketPrefix /var/run/wsgi
 ```
 
-Content of `/srv/vhosts/superawesomedns.foo.bar/powerdnsadmin.wsgi`;
+Content of `/srv/vhosts/superawesomedns.foo.bar/gundnsadmin.wsgi`;
 ```python
 #!/usr/bin/env python3
 import sys
@@ -87,13 +87,13 @@ sys.path.insert(0, '/srv/vhosts/superawesomedns.foo.bar')
 
 from app import app as application
 ```
-Starting from 0.2 version, the `powerdnsadmin.wsgi` file is slighty different : 
+Starting from 0.2 version, the `gundnsadmin.wsgi` file is slighty different : 
 ```python
 #!/usr/bin/env python3
 import sys
 sys.path.insert(0, '/srv/vhosts/superawesomedns.foo.bar')
 
-from powerdnsadmin import create_app
+from gundnsadmin import create_app
 application = create_app()
 ```
 

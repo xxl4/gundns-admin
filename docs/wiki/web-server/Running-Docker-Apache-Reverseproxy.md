@@ -11,7 +11,7 @@ docker-compose.yml
 version: "3"
 services:
   app:
-    image: powerdnsadmin/pda-legacy:latest
+    image: gundnsadmin/pda-legacy:latest
     container_name: powerdns
     restart: always
     network_mode: "host"
@@ -22,7 +22,7 @@ services:
     environment:
       - BIND_ADDRESS=127.0.0.1:8082
       - SECRET_KEY='NotVerySecret'
-      - SQLALCHEMY_DATABASE_URI=mysql://pdnsadminuser:password@127.0.0.1/powerdnsadmin
+      - SQLALCHEMY_DATABASE_URI=mysql://pdnsadminuser:password@127.0.0.1/gundnsadmin
       - GUNICORN_TIMEOUT=60
       - GUNICORN_WORKERS=2
       - GUNICORN_LOGLEVEL=DEBUG
@@ -35,7 +35,7 @@ After running the Container create the static directory and populate
 
 ```
 mkdir -p /var/www/powerdns
-docker cp powerdns:/app/powerdnsadmin/static /var/www/powerdns/
+docker cp powerdns:/app/gundnsadmin/static /var/www/powerdns/
 chown -R root:www-data /var/www/powerdns
 ```
 

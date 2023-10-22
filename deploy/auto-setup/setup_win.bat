@@ -1,13 +1,13 @@
 @echo off
 
 rem Create a new group for PowerDNS-Admin
-net localgroup powerdnsadmin /add
+net localgroup gundnsadmin /add
 
 rem Create a user for PowerDNS-Admin
-net user powerdnsadmin /add /passwordchg:no /homedir:nul /active:yes /expires:never /passwordreq:no /s
+net user gundnsadmin /add /passwordchg:no /homedir:nul /active:yes /expires:never /passwordreq:no /s
 
 rem Make the new user and group the owners of the PowerDNS-Admin files
-icacls "C:\path\to\powerdns-admin" /setowner "powerdnsadmin"
+icacls "C:\path\to\powerdns-admin" /setowner "gundnsadmin"
 
 rem Start the PowerDNS-Admin service
 net start powerdns-admin

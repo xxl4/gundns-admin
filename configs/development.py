@@ -157,7 +157,7 @@ SAML_ENABLED = False
 # ### If the user is a member of this group, and that group name is included in the collection,
 # ###   the user will be set as an administrator.
 # #SAML_ATTRIBUTE_GROUP = 'https://example.edu/pdns-groups'
-# #SAML_GROUP_ADMIN_NAME = 'PowerDNSAdmin-Administrators'
+# #SAML_GROUP_ADMIN_NAME = 'gundnsadmin-Administrators'
 
 # SAML_SP_ENTITY_ID = 'http://<SAML SP Entity ID>'
 # SAML_SP_CONTACT_NAME = '<contact name>'

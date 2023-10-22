@@ -18,7 +18,7 @@ PIDFile=/run/powerdns-admin/pid
 User=pdnsa
 Group=pdnsa
 WorkingDirectory=/opt/powerdns-admin
-ExecStart=/usr/bin/gunicorn-3.6 --workers 4 --log-level info --pid /run/powerdns-admin/pid --bind unix:/run/powerdns-admin/socket "powerdnsadmin:create_app(config='config.py')"
+ExecStart=/usr/bin/gunicorn-3.6 --workers 4 --log-level info --pid /run/powerdns-admin/pid --bind unix:/run/powerdns-admin/socket "gundnsadmin:create_app(config='config.py')"
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s TERM $MAINPID
 PrivateTmp=true
@@ -68,10 +68,10 @@ This includes SSL redirect.
 </VirtualHost>
 <VirtualHost *:443>
   ServerName dnsadmin.company.com
-  DocumentRoot "/opt/powerdns-admin/powerdnsadmin"
+  DocumentRoot "/opt/powerdns-admin/gundnsadmin"
   ## Alias declarations for resources outside the DocumentRoot
-  Alias /static/ "/opt/powerdns-admin/powerdnsadmin/static/"
-  Alias /favicon.ico "/opt/powerdns-admin/powerdnsadmin/static/favicon.ico"
+  Alias /static/ "/opt/powerdns-admin/gundnsadmin/static/"
+  Alias /favicon.ico "/opt/powerdns-admin/gundnsadmin/static/favicon.ico"
   <Directory "/opt/powerdns-admin">
     AllowOverride None
     Require all granted

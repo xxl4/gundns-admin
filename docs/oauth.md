@@ -4,7 +4,7 @@
 
 To link to Azure for authentication, you need to register PowerDNS-Admin in Azure.  This requires your PowerDNS-Admin web interface to use an HTTPS URL.
 
-* Under the Azure Active Directory, select App Registrations, and create a new one.  Give it any name you want, and the Redirect URI shoule be type 'Web' and of the format https://powerdnsadmin/azure/authorized (replace the host name approriately).
+* Under the Azure Active Directory, select App Registrations, and create a new one.  Give it any name you want, and the Redirect URI shoule be type 'Web' and of the format https://gundnsadmin/azure/authorized (replace the host name approriately).
 * Select the newly-created registration
 * On the Overview page, the Application ID is your new Client ID to use with PowerDNS-Admin
 * On the Overview page, make a note of your Directory/Tenant ID - you need it for the API URLs later

@@ -21,7 +21,7 @@ services:
     environment:
       - BIND_ADDRESS=127.0.0.1:8082
       - SECRET_KEY='VerySecret'
-      - SQLALCHEMY_DATABASE_URI=mysql://pdnsadminuser:password@127.0.0.1/powerdnsadmin
+      - SQLALCHEMY_DATABASE_URI=mysql://pdnsadminuser:password@127.0.0.1/gundnsadmin
       - GUNICORN_TIMEOUT=60
       - GUNICORN_WORKERS=2
       - GUNICORN_LOGLEVEL=DEBUG
