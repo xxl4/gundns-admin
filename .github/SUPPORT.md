@@ -1,11 +1,10 @@
-# PowerDNS Admin
+# GunDNS Admin
 
 ## Project Support
 
 **Looking for help?** PDA has a somewhat active community of fellow users that may be able to provide assistance.
-Just [start a discussion](https://github.com/PowerDNS-Admin/PowerDNS-Admin/discussions/new) right here on GitHub!
+Just [start a discussion](https://github.com/nicelizhi/GunDNS-Admin/discussions/new) right here on GitHub!
 
-Looking to chat with someone? Join our [Discord Server](https://discord.powerdnsadmin.org).
 
 Some general tips for engaging here on GitHub:
 
