@@ -42,9 +42,9 @@ jobs:
         run: |
           docker login --username=${{ secrets.DOCKER_USERNAME }} registry.ap-southeast-1.aliyuncs.com --password=${{ secrets.DOCKER_PASSWORD }}
           echo "************ docker login end"
-          docker build -t gundns-admin:latest ./docker/Dockerfile
+          docker build -f ./docker/Dockerfile .
           echo "************ docker build end"
-          docker tag go-admin-api ${{ env.IMAGE_NAME_TAG }}
+          docker tag gundns-admin ${{ env.IMAGE_NAME_TAG }}
           echo "************ docker tag end"
           docker images
           echo "************ docker images end"
